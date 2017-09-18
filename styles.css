@@ -367,5 +367,20 @@ html,body {
 
 
 @media only screen and (max-device-width: 768px) {
-    .navbar{display: none;}
+    #learnAboutUs{
+        width: 100%;
+        height: 700px;
+    }
+    #ourServices{
+        width: 100%;
+        height: 700px;
+    }
+    #quoteBox{
+        width: 100%;
+        height: 700px;
+    }
+    #contactUs{
+        width: 100%;
+        height: 700px;
+    }
 }
