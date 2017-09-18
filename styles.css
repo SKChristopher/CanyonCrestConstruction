@@ -49,7 +49,7 @@ html,body {
     top: 0;
     right: 0;
     left: 0;
-    min-width: 624px;
+    min-width: 841px;
     box-shadow: 0 7px 17px rgba(50,50,50,0.5);
     -webkit-transition: width .4s, height .4s, background-color .4s, -webkit-transform .4s;
     transition: width .4s, height .4s, background-color .4s, transform .4s;
