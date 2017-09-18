@@ -230,9 +230,3 @@ document.body.onscroll = function navbar() {
         document.getElementById('logo').className = 'logo';
     }
 }
-
-//ipad
-
-if (screen.width <= 800) {
-    document.getElementById('navbar').style.display = 'none';
-}
