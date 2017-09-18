@@ -389,4 +389,19 @@ html,body {
     .regularText {
         font-size: 32px;
     }
+    .navLink #homeIcon {
+        color: red;
+    }
+    .navLink #quotesIcon {
+        color: green;
+    }
+    .navLink #reviewsIcon {
+        color: yellow;
+    }
+    .navLink #contactIcon {
+        color: blue;
+    }
+    .navLink:hover {
+        font-size: 24px;
+    }
 }

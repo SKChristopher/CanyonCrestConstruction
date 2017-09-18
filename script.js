@@ -182,7 +182,7 @@ quoteTitle.className = 'titleText';
 document.getElementById('quoteBox').appendChild(quoteTitle);
 let quoteText = document.createElement('p');
 quoteText.id = 'quoteText';
-quoteText.textContent = "If you'd like to see more photos of work completed by Canyon Crest Construction, click here.";
+quoteText.textContent = "If you'd like to see more photos of projects completed by Canyon Crest Construction, click here.";
 quoteText.className = 'regularText';
 document.getElementById('quoteBox').appendChild(quoteText);
 
@@ -230,3 +230,58 @@ document.body.onscroll = function navbar() {
         document.getElementById('logo').className = 'logo';
     }
 }
+
+//swiping across photos
+document.getElementById('viewOurWork').addEventListener('touchstart', handleTouchStart, false);        
+document.getElementById('viewOurWork').addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;                                                        
+var yDown = null;                                                        
+
+function handleTouchStart(evt) {                                         
+    xDown = evt.touches[0].clientX;                                      
+    yDown = evt.touches[0].clientY;                                      
+};                                                
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            //swipe left
+            photoIndex -= 1;
+            for (let i = 0; i < workPhotos.length; i++) {
+                viewWorkPhotos[i].style.display = 'none';
+                viewWorkPhotos[photoIndex].style.display = 'block';
+                carouselCircle[i].className = 'carouselCircle';
+                carouselCircle[photoIndex].className = 'carouselCircleSelected';
+            }
+        } else {
+            /* right swipe */
+            photoIndex += 1;
+            for (let i = 0; i < workPhotos.length; i++) {
+                viewWorkPhotos[i].style.display = 'none';
+                viewWorkPhotos[photoIndex].style.display = 'block';
+                carouselCircle[i].className = 'carouselCircle';
+                carouselCircle[photoIndex].className = 'carouselCircleSelected';
+            }
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+            /* up swipe */ 
+        } else { 
+            /* down swipe */
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
