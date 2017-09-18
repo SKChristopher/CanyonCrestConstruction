@@ -257,7 +257,8 @@ function handleTouchMove(evt) {
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {
             //swipe left
-            photoIndex -= 1;
+            if (photoIndex < workPhotos.length) {photoIndex += 1;}
+            else {photoIndex = 0;}
             for (let i = 0; i < workPhotos.length; i++) {
                 viewWorkPhotos[i].style.display = 'none';
                 viewWorkPhotos[photoIndex].style.display = 'block';
@@ -266,7 +267,8 @@ function handleTouchMove(evt) {
             }
         } else {
             /* right swipe */
-            photoIndex += 1;
+            if (photoIndex > 0) {photoIndex -= 1;}
+            else {photoIndex = workPhotos.length;}
             for (let i = 0; i < workPhotos.length; i++) {
                 viewWorkPhotos[i].style.display = 'none';
                 viewWorkPhotos[photoIndex].style.display = 'block';
