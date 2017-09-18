@@ -47,7 +47,7 @@ quotes.textContent = 'Get a Quote';
 document.getElementById('navbarCenter').appendChild(quotes);
 let quotesIcon = document.createElement('i');
 quotesIcon.id = 'quotesIcon';
-quotesIcon.className = 'fa fa-quote-right';
+quotesIcon.className = 'fa fa-eye';
 document.getElementById('quotes').appendChild(quotesIcon);
 
 let reviews = document.createElement('a');
@@ -177,12 +177,12 @@ quoteBox.id = 'quoteBox';
 document.getElementById('content').appendChild(quoteBox);
 let quoteTitle = document.createElement('p');
 quoteTitle.id = 'quoteTitle';
-quoteTitle.textContent = 'Get a Free Quote';
+quoteTitle.textContent = 'View More Work';
 quoteTitle.className = 'titleText';
 document.getElementById('quoteBox').appendChild(quoteTitle);
 let quoteText = document.createElement('p');
 quoteText.id = 'quoteText';
-quoteText.textContent = "Want a free quote? Contact us by email or phone about your project, and we'll respond within one business day to set an appointment!";
+quoteText.textContent = "If you'd like to see more photos of work completed by Canyon Crest Construction, click here.";
 quoteText.className = 'regularText';
 document.getElementById('quoteBox').appendChild(quoteText);
 
