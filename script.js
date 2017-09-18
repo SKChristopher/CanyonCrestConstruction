@@ -43,7 +43,7 @@ let quotes = document.createElement('a');
 quotes.id = 'quotes';
 quotes.className = 'navLink';
 quotes.href = '#quoteBox';
-quotes.textContent = 'Get a Quote';
+quotes.textContent = 'View Work';
 document.getElementById('navbarCenter').appendChild(quotes);
 let quotesIcon = document.createElement('i');
 quotesIcon.id = 'quotesIcon';
