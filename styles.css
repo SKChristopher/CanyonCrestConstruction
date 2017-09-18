@@ -383,4 +383,10 @@ html,body {
         width: 100%;
         height: 700px;
     }
+        .titleText {
+        font-size: 100px;
+    }
+    .regularText {
+        font-size: 32px;
+    }
 }
