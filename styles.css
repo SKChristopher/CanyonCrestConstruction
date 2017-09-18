@@ -336,6 +336,24 @@ html,body {
     display: inline-block;
 }
 
+#phone {
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    width: 150px;
+    margin: 0px 10px 10px 0px;
+    right: 0;
+    background-color: blue;
+    border-radius: 10%;
+    display: none;
+}
+#phoneIcon {
+    width: 100%;
+    font-size: 150px;
+    color: white;
+}
+
+
 @keyframes fadeIn {
     from { opacity: .4; }
     to   { opacity: 1; }
@@ -403,5 +421,8 @@ html,body {
     }
     .navLink:hover {
         font-size: 24px;
+    }
+    #phone {
+        display: block;
     }
 }

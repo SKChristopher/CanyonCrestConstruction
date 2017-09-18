@@ -218,6 +218,15 @@ copyright.id = 'copyright';
 copyright.textContent = 'Copyright 2013. Canyon Crest Construction. All rights reserved.';
 document.getElementById('content').appendChild(copyright);
 
+//phone
+let phone = document.createElement('a');
+phone.id = 'phone';
+phone.href = 'tel:9496784271';
+document.getElementById('content').appendChild(phone);
+let phoneIcon = document.createElement('i');
+phoneIcon.id = 'phoneIcon';
+phoneIcon.className = 'fa fa-phone';
+document.getElementById('phone').appendChild(phoneIcon);
 
 //navbar function
 document.body.onscroll = function navbar() {
