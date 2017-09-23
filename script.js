@@ -201,8 +201,9 @@ services2.textContent = "We offer start-to-finish solutions for every project, s
 services2.className = 'regularText';
 document.getElementById('ourServices').appendChild(services2);
 
-let quoteBox = document.createElement('div');
+let quoteBox = document.createElement('a');
 quoteBox.id = 'quoteBox';
+quoteBox.href = 'viewWork.html'
 document.getElementById('content').appendChild(quoteBox);
 let quoteTitle = document.createElement('p');
 quoteTitle.id = 'quoteTitle';
@@ -211,14 +212,12 @@ quoteTitle.className = 'titleText';
 document.getElementById('quoteBox').appendChild(quoteTitle);
 let quoteText = document.createElement('p');
 quoteText.id = 'quoteText';
-quoteText.textContent = "If you'd like to see more photos of projects completed by Canyon Crest Construction, click here.";
+quoteText.textContent = "Click here if you'd like to see more photos of projects completed by Canyon Crest Construction.";
 quoteText.className = 'regularText';
 document.getElementById('quoteBox').appendChild(quoteText);
 
-quoteBox.onclick = function() {
-    window.open('viewWork.html');
-}
-document.getElementById('quoteBox').addEventListener('touchstart', function() {window.open('viewWork.html');});
+// quoteBox.onclick = function() {
+//     window.open('viewWork.html');
 
 let contactUs = document.createElement('div');
 contactUs.id = 'contactUs';

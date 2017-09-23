@@ -236,6 +236,7 @@ html,body {
     height: 350px;
     display: block;
     background-color: #226666;
+    text-decoration: none;
 }
 #quoteTitle {
     color: white;
