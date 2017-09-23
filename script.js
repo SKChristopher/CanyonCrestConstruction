@@ -218,6 +218,9 @@ document.getElementById('quoteBox').appendChild(quoteText);
 quoteBox.onclick = function() {
     window.open('viewWork.html');
 }
+quoteBox.ontouchstart = function() {
+    window.open('viewWork.html');
+}
 
 let contactUs = document.createElement('div');
 contactUs.id = 'contactUs';
