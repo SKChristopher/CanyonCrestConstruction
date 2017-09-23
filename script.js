@@ -42,7 +42,7 @@ document.getElementById('home').appendChild(homeIcon);
 let quotes = document.createElement('a');
 quotes.id = 'quotes';
 quotes.className = 'navLink';
-quotes.href = '#quoteBox';
+quotes.href = 'viewWork.html';
 quotes.textContent = 'View Work';
 document.getElementById('navbarCenter').appendChild(quotes);
 let quotesIcon = document.createElement('i');
@@ -102,6 +102,10 @@ let carouselCircleDiv = document.createElement('div');
 carouselCircleDiv.id = 'carouselCircleDiv';
 document.getElementById('content').appendChild(carouselCircleDiv);
 
+let carouselLeftArrow = document.createElement('div');
+carouselLeftArrow.className = 'fa fa-angle-double-left';
+carouselLeftArrow.id = 'carouselLeftArrow';
+document.getElementById('carouselCircleDiv').appendChild(carouselLeftArrow);
 let viewWorkPhotos = [];
 let carouselCircle = [];
 for (let i = 0; i < workPhotos.length; i++) {
@@ -114,6 +118,10 @@ for (let i = 0; i < workPhotos.length; i++) {
     carouselCircle[i].id = 'carouselCircle' + i;
     document.getElementById('carouselCircleDiv').appendChild(carouselCircle[i]);
 }
+let carouselRightArrow = document.createElement('div');
+carouselRightArrow.className = 'fa fa-angle-double-right';
+carouselRightArrow.id = 'carouselRightArrow';
+document.getElementById('carouselCircleDiv').appendChild(carouselRightArrow);
 
 //photo carousel
 let timer = 5000;
@@ -140,6 +148,27 @@ for (let j = 0; j < workPhotos.length; j++) {
             carouselCircle[i].className = 'carouselCircle';
             carouselCircle[photoIndex].className = 'carouselCircleSelected';
         }
+    }
+}
+
+carouselRightArrow.onclick = function() {
+    if (photoIndex < workPhotos.length - 1) {photoIndex += 1;}
+    else {photoIndex = 0;}
+    for (let i = 0; i < workPhotos.length; i++) {
+        viewWorkPhotos[i].style.display = 'none';
+        viewWorkPhotos[photoIndex].style.display = 'block';
+        carouselCircle[i].className = 'carouselCircle';
+        carouselCircle[photoIndex].className = 'carouselCircleSelected';
+    }
+}
+carouselLeftArrow.onclick = function() {
+    if (photoIndex > 0) {photoIndex -= 1;}
+    else {photoIndex = workPhotos.length - 1;}
+    for (let i = 0; i < workPhotos.length; i++) {
+        viewWorkPhotos[i].style.display = 'none';
+        viewWorkPhotos[photoIndex].style.display = 'block';
+        carouselCircle[i].className = 'carouselCircle';
+        carouselCircle[photoIndex].className = 'carouselCircleSelected';
     }
 }
 
@@ -185,6 +214,10 @@ quoteText.id = 'quoteText';
 quoteText.textContent = "If you'd like to see more photos of projects completed by Canyon Crest Construction, click here.";
 quoteText.className = 'regularText';
 document.getElementById('quoteBox').appendChild(quoteText);
+
+quoteBox.onclick = function() {
+    window.open('viewWork.html');
+}
 
 let contactUs = document.createElement('div');
 contactUs.id = 'contactUs';
@@ -233,10 +266,10 @@ document.body.onscroll = function navbar() {
     let scrollPosY = window.pageYOffset | document.body.scrollTop;
     if (scrollPosY > 30) {
         document.getElementById('navbar').className = 'navbarScroll';
-        document.getElementById('logo').className = 'logoScroll';
+        // document.getElementById('logo').className = 'logoScroll';
     } else {
         document.getElementById('navbar').className = 'navbar';
-        document.getElementById('logo').className = 'logo';
+        // document.getElementById('logo').className = 'logo';
     }
 }
 
@@ -266,7 +299,7 @@ function handleTouchMove(evt) {
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {
             //swipe left
-            if (photoIndex < workPhotos.length) {photoIndex += 1;}
+            if (photoIndex < workPhotos.length - 1) {photoIndex += 1;}
             else {photoIndex = 0;}
             for (let i = 0; i < workPhotos.length; i++) {
                 viewWorkPhotos[i].style.display = 'none';
@@ -277,7 +310,7 @@ function handleTouchMove(evt) {
         } else {
             /* right swipe */
             if (photoIndex > 0) {photoIndex -= 1;}
-            else {photoIndex = workPhotos.length;}
+            else {photoIndex = workPhotos.length - 1;}
             for (let i = 0; i < workPhotos.length; i++) {
                 viewWorkPhotos[i].style.display = 'none';
                 viewWorkPhotos[photoIndex].style.display = 'block';

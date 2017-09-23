@@ -243,6 +243,10 @@ html,body {
 #quoteText {
     color: white;
 }
+#quoteBox:hover {
+    cursor: pointer;
+    background-color: #1A4E4E;
+}
 
 #contactUs {
     position: relative;
@@ -335,6 +339,30 @@ html,body {
     border-radius: 50%;
     display: inline-block;
 }
+#carouselLeftArrow {
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 25px;
+    margin: 6px;
+    font-size: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+#carouselRightArrow {
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 25px;
+    margin: 6px;
+    font-size: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
 
 #phone {
     position: fixed;
@@ -401,7 +429,7 @@ html,body {
         width: 100%;
         height: 700px;
     }
-        .titleText {
+    .titleText {
         font-size: 100px;
     }
     .regularText {

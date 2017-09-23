@@ -1,0 +1,24 @@
+/* scriptViewWork */
+body {
+    background-color: black;
+}
+
+#returnHome {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 150px;
+    margin: 0px 10px 10px 0px;
+    right: 0;
+    background-color: #B4522B;
+    border-radius: 10%;
+    text-align: center;
+}
+#homeIcon2 {
+    width: 100%;
+    font-size: 150px;
+    color: white;
+}
+.workPhotoPic {
+    width: 75%;
+}
