@@ -219,7 +219,7 @@ quoteBox.onclick = function() {
     window.open('viewWork.html');
 }
 quoteBox.ontouchstart = function() {
-    window.open('viewWork.html');
+    window.location = 'viewWork.html';
 }
 
 let contactUs = document.createElement('div');
