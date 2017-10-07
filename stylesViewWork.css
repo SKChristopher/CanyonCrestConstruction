@@ -21,4 +21,5 @@ body {
 }
 .workPhotoPic {
     width: 75%;
+    position: relative;
 }
